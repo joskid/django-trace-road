@@ -1,43 +1,30 @@
-# [Urban Bike](http://urbanbike.me/)
+# Trace Road
 
-Simple real-time bicycling check-in system.
+Web-based GPS trace-logging system.
 
 
-## Setup
+## Requirements
 
-* Install [MongoDB](http://www.mongodb.org/downloads) with [Python Driver](http://api.mongodb.org/python/current/installation.html)
+* MongoDB 2.0.2 or higher.
 
-* Install [Less CSS pre-processor](http://lesscss.org/)
+* Less CSS pre-processor development version.
 
-* Install [Django Web Framework](https://www.djangoproject.com/)
-
-* Setup and configure [Spatial Database](https://docs.djangoproject.com/en/1.4/ref/contrib/gis/install/#spatial-database)
 
 
 ## Features
 
-* Sign-up via Facebook
+* Semantic HTML5 markup.
 
-* Geo-positioning
+* Adaptive layout based on Frameless grid system.
 
-* Twitter API integration.
+* Server-side Geo-positioning & Client-side GPS positioning.
 
-* Instagram API integration.
+* Django and MongoDB hybrid object model for Traces.
 
-
-## Project information
-
-* Web: http://urbanbike.me/
-
-* Source: https://github.com/urbanbiker/UrbanBike
-
-* Twitter: https://twitter.com/urbanbikeme
 
 
 ## Licensing
 
-* Frameless licensed under CC0: http://creativecommons.org/publicdomain/zero/1.0/
-
-* UrbanBike licensed under CC0: http://creativecommons.org/publicdomain/zero/1.0/
+* CC0: http://creativecommons.org/publicdomain/zero/1.0/
 
    
