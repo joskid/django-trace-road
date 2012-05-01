@@ -1,4 +1,9 @@
 *.log
 *.pot
 *.pyc
-local_settings.py
+*.db
+*.orig
+data*
+.ropeproject
+*~
+settings_local.py

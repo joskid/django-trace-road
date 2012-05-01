@@ -1,0 +1,6 @@
+south
+pymongo
+django-extensions
+django-annoying
+-e https://github.com/aschem/django-user-location.git#egg=locations
+
