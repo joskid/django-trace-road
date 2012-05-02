@@ -6,23 +6,24 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    
+    <meta name="description" content="Free Web-based GPS trace-logging system."/>
     <title>{% block title %}{% endblock %} TraceLOG</title>
     
     {% if TEMPLATE_DEBUG %}
 	<link rel="stylesheet/less" href="{{ STATIC_URL }}less/main.less" type="text/css" />
     {% else %}
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
-    {% endif %}		
+    {% endif %}
+
     <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}icon.png"/>    
+
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
-    <meta name="description" content="Free Web-based GPS trace-logging system."/>
 </head>
 	
+
 <body lang="en">
     <header>
 	<h1><a href="{% url trace-index %}">TraceLOG</a></h1>
@@ -46,9 +47,6 @@
 	</header>	
 
         {% block google_map %}	
-            <section id="googlemap">	
-		<div id="map_canvas"></div>
-	    </section>
 	{% endblock %}
 
         {% block content %}
@@ -56,13 +54,11 @@
 
     </article>
     
-
     <footer>
 	    <section>
                 <p>
                    This site was built using <a target="blank" href="http://www.djangoproject.com/">Django Web framework</a> and <a arget="blank" href="http://www.mongodb.org/">MongoDB</a>. It could be used on mobile or tablet due to the <a arget="blank" href="http://framelessgrid.com">Frameless</a>  &mdash;  A non-fluid grid system for adaptive web design.
                 </p>
-                <br/>		
 	    </section>	
     </footer>
     
@@ -70,7 +66,9 @@
     {% if TEMPLATE_DEBUG %}
 	<script src="{{ STATIC_URL }}js/less.js"></script>
     {% endif %}
-    {% block extra_script %}{% endblock %}
+
+    {% block extra_script %}
+    {% endblock %}
     
 </body>
 

@@ -1,24 +1,35 @@
 {% extends 'traces/index.html' %}
 
-{% block title %}GPS Trace {% if fire_start %}Record {{ trace.modified|time }}{% endif %} ~ {% endblock %}
-{% block h1 %}{% if fire_start %}Keep moving, we're recording your GPS trace{% else %}{{ trace.get_start|default:"" }} ~ {{ trace.created }}{% endif %}
-{% endblock %}
+{% block title %}GPS Trace Record {{ trace.created|time }}{% endblock %}
+
+{% block h1 %}
+    {% if fire_start %}
+	Keep moving, we're recording your GPS trace
+    {% else %}
+	{{ trace.get_start|default:"" }} <span>{{ trace.created }}</span>
+    {% endif %}
+ {% endblock %}
 
 {% block trace_button %}resume{% endblock %}
-{% block extra_script %}
-{{ block.super }}
-<script src="{{ STATIC_URL }}js/backbone-localstorage.js"></script>
-<script src="{{ STATIC_URL }}js/jquery.periodic.js"></script>
-<script src="{{ STATIC_URL }}js/moment.min.js"></script>
-<script src="{{ STATIC_URL }}js/traces.js"></script>
-<script type="text/javascript">
-    $(function(){
-	  var trace_app = new window.TraceApp({
+
+{% block parent_extra_script %}
+    <script src="{{ STATIC_URL }}js/backbone-localstorage.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.periodic.js"></script>
+    <script src="{{ STATIC_URL }}js/moment.min.js"></script>
+    <script src="{{ STATIC_URL }}js/traces.js"></script>
+    <script type="text/javascript">
+	$(function () {
+            var gmaps = new window.GMapsApp({
+  	         center: {{ center|safe }},
+                 el: '#map_canvas'
+            });
+	
+	    var trace_app = new window.TraceApp({
                   uuid: '{{ trace.uuid }}',
+                  gmaps_app: gmaps,
                   fire_start: {{ fire_start|yesno:"true,false" }},
                   points: {{ points|safe }},
-              });
-      });
-</script>
-
+            });
+	});
+    </script>
 {% endblock %}
